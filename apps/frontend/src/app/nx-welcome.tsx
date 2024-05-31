@@ -5,6 +5,9 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
+
+import { Input } from "@ems/common-ui";
+
 export function NxWelcome({ title }: { title: string }) {
   return (
     <>
@@ -421,6 +424,10 @@ export function NxWelcome({ title }: { title: string }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
+
+            <h3>Type your name</h3>
+            <Input type="text" placeholder="Your name" />
+
           </div>
 
           <div id="hero" className="rounded">
