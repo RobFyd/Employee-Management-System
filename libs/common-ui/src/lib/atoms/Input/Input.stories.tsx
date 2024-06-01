@@ -9,4 +9,17 @@ const meta = {
 } satisfies Meta<typeof Input>;
 
 export default meta;
+
 type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
+    args: {},
+};
+
+export const Primary: Story = {
+    args: {},
+};
+
+export const Secondary: Story = {
+    args: {},
+};
