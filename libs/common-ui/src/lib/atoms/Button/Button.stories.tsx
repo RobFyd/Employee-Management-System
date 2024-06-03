@@ -12,6 +12,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const _Button = () => <Button label="Click me" />;
+
 export const Default: Story = {
   args: {
     label: 'Hello',
