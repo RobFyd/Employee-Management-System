@@ -13,7 +13,11 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
-    args: {},
+    args: {
+        type: 'text',
+        placeholder: 'Placeholder',
+        name: 'name',
+    },
 };
 
 export const Primary: Story = {
