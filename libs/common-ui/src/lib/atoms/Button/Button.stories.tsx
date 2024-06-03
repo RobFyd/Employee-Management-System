@@ -12,8 +12,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const _Button = () => <Button label="Click me" />;
-
 export const Default: Story = {
   args: {
     label: 'Hello',
@@ -23,15 +21,18 @@ export const Default: Story = {
 export const Primary: Story = {
   args: {
     label: 'Hello',
-    // bgColor: 'amethyst',
-    // color: 'emerald',
+    bgColor: 'amethyst',
+    color: 'emerald',
   },
 };
 
 export const Secondary: Story = {
   args: {
     label: 'Hello',
-    // bgColor: 'peter-river',
-    // color: 'amethyst',
+    bgColor: 'peterRiver',
+    color: 'amethyst',
   },
 };
+
+// alternative way to export the story
+// export const _Button = () => <Button label="Click me" />;
