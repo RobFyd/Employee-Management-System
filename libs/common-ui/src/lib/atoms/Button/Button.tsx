@@ -29,7 +29,7 @@ type Props = {
   // className?: string;
 };
 
-export const Button = ({ label, bgColor, color, onClick, className }: Pick<ComponentProps<"button">, "onClick" | "className"> & Props) => {
+export const Button = ({ label, bgColor, color, onClick, className }: ComponentProps<"button"> & Props) => {
   const _color = color ? colors[color] : "";
   const _bgColor = bgColor ? colors[bgColor] : "";
 
