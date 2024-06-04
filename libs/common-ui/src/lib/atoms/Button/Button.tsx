@@ -7,6 +7,8 @@
 //   red: "#ff0000",
 // };
 
+import { MouseEventHandler } from "react";
+
 const colors = {
   emerald: "#2ecc71",
   peterRiver: "#3498db",
@@ -19,14 +21,18 @@ type Props = {
   label: string;
   bgColor?: ColorType;
   color?: ColorType;
+  //onClick?: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-export const Button = ({ label, bgColor, color }: Props) => {
+export const Button = ({ label, bgColor, color, onClick }: Props) => {
   const _color = color ? colors[color] : "";
   const _bgColor = bgColor ? colors[bgColor] : "";
 
-  return <button style={{
-    backgroundColor: _bgColor,
-    color: _color,
-  }}>{label}</button>;
+  return <button
+    onClick={onClick}
+    style={{
+      backgroundColor: _bgColor,
+      color: _color,
+    }}>{label}</button>;
 };
