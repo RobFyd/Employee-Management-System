@@ -1,3 +1,6 @@
+import type { ComponentProps } from "react";
+
+// colors from pallette: https://flatuicolors.com/palette/defo
 
 // better for security:
 // const colors: Record<"emerald" | "peterRiver" | "amethyst", string> = {
@@ -21,8 +24,8 @@ type Props = {
   label: string;
   bgColor?: ColorType;
   color?: ColorType;
-  //onClick?: () => void;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  // onClick?: () => void; // avoid using void when unnecessary
+  // onClick: MouseEventHandler<HTMLButtonElement>; // better for security
   className?: string;
 };
 
