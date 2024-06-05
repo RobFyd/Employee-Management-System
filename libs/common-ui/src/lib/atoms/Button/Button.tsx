@@ -29,13 +29,26 @@ type Props = {
   // className?: string;
 };
 
-export const Button = ({ 
-  label, 
-  bgColor, 
-  color, 
-  onClick, 
+const UserForm = () => {
+
+const handleSubmit = () => {
+  console.log("Form submitted");
+};
+
+  return (
+    <div>
+      <Button label="Submit" onClick={handleSubmit} />
+    </div>
+  );
+}
+
+export const Button = ({
+  label,
+  bgColor,
+  color,
+  onClick,
   className,
-  ...rest
+  ...rest // universal component props
 }: ComponentProps<"button"> & Props) => {
   const _color = color ? colors[color] : "";
   const _bgColor = bgColor ? colors[bgColor] : "";
@@ -48,5 +61,5 @@ export const Button = ({
       color: _color,
     }}
     {...rest}
-    >{label}</button>;
+  >{label}</button>;
 };
