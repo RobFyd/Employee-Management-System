@@ -31,15 +31,15 @@ type Props = {
 
 const UserForm = () => {
 
-// const handleSubmit: FormEventHandler = (e) => {}; // for forms
-// const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {}; // for input fields
-const handleSubmit: MouseEventHandler<HTMLButtonElement> = () => {
-  console.log("Form submitted");
-};
+  // const handleSubmit: FormEventHandler = (e) => {}; // for forms
+  // const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {}; // for input fields
+  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
+    console.log("Form submitted");
+  };
 
   return (
     <div>
-      <Button label="Submit" onClick={handleSubmit} />
+      <Button label="Submit" onClick={handleClick} />
     </div>
   );
 }
