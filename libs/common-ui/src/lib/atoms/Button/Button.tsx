@@ -85,7 +85,7 @@ export const Button = ({
     // "focus:ring-2",
     // "focus:ring-offset-2",
     // "focus:ring-offset-gray-800",
-    // "focus:ring-white",
+    "focus:ring-white",
     // "transition-colors", // transition effects
     // "duration-300", // duration
     // "ease-in-out",
