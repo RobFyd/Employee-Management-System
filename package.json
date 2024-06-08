@@ -15,6 +15,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "clsx": "^2.0.0",
+    "dotenv": "^16.4.5",
     "event-source-polyfill": "^1.0.31",
     "next": "13.4.1",
     "pg": "^8.11.1",
