@@ -6,7 +6,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-import { Input, Select } from "@ems/common-ui";
+import { Input, Select, Button } from "@ems/common-ui";
 
 export function NxWelcome({ title }: { title: string }) {
   return (
@@ -430,7 +430,14 @@ export function NxWelcome({ title }: { title: string }) {
               <h3>Type your name</h3>
               <Input type="text" name="" placeholder="Your name" />
             </div>
-            <Select name="select" id="select" size={3} required={true} />
+            <br />
+            <div>
+              <Select name="select" id="select" size={3} required={true} />
+            </div>
+            <br />
+            <div>
+              <Button label="Submit" />
+            </div>
 
           </div>
 
