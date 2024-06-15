@@ -1,4 +1,5 @@
 import { FormEventHandler, useState } from 'react';
+import { Button } from "@ems/common-ui";
 
 import "./RegistrationForm.module.css";
 
@@ -36,7 +37,7 @@ export const RegistrationForm = () => {
                     onChange={(event) => setAge(event.target.value)}
                 />
             </div>
-            <button type="submit">Send</button>
+            <Button type="submit" label="Send" />
         </form>
     )
 };
