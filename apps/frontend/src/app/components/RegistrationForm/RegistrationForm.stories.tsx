@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { RegistrationForm } from './RegistrationForm';
 
@@ -15,9 +14,15 @@ const meta = {
 
 export default meta;
 
-const Template: Story = (args) => <RegistrationForm {...args} />;
+type Story = StoryObj<typeof meta>;
 
-export const Default = Template.bind({});
-Default.args = {
-    // tutaj dodaj domyślne argumenty
-};
+// export const Default = Template.bind({});
+// Default.args = {
+//     // tutaj dodaj domyślne argumenty
+// };
+
+export const Default: Story = {
+    args: {
+        // tutaj dodaj domyślne argumenty
+    },
+  };
