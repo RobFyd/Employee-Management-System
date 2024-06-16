@@ -1,16 +1,20 @@
-import { FormEventHandler, useState } from 'react';
+import { FormEventHandler, useState, useRef } from 'react';
 import { Button } from "@ems/common-ui";
 
 import "./RegistrationForm.module.css";
 
 export const RegistrationForm = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [age, setAge] = useState('');
+    // const [firstName, setFirstName] = useState('');
+    // const [lastName, setLastName] = useState('');
+    // const [age, setAge] = useState('');
+    const firstNameRef = useRef<HTMLInputElement>(null);
+    const lastNameRef = useRef<HTMLInputElement>(null);
+    const ageRef = useRef<HTMLInputElement>(null);
 
     const handleSubmit: FormEventHandler = (event) => {
         event.preventDefault();
-        console.log(firstName, lastName, age);
+        // console.log(firstName, lastName, age);
+        console.log({ firstName: firstNameRef.current?.value });
     };
 
     return (
@@ -19,14 +23,14 @@ export const RegistrationForm = () => {
                 <label htmlFor="firstName">First name: </label>
                 <input
                     id="firstName"
-                    onChange={(event) => setFirstName(event.target.value)}
+                    ref={firstNameRef}
                 />
             </div>
             <div>
                 <label htmlFor="lastName">Last name: </label>
                 <input
                     id="lastName"
-                    onChange={(event) => setLastName(event.target.value)}
+                    ref={lastNameRef}
                 />
             </div>
             <div>
@@ -34,7 +38,7 @@ export const RegistrationForm = () => {
                 <input
                     id="age"
                     type="number"
-                    onChange={(event) => setAge(event.target.value)}
+                    ref={ageRef}
                 />
             </div>
             <Button type="submit" label="Send" />
