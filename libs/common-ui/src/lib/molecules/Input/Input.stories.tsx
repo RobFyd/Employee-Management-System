@@ -1,27 +1,25 @@
-// import { Input } from './Input';
+import type { Meta, StoryObj } from '@storybook/react';
 
-// const meta = {
-//     title: 'UI/Atoms/Input',
-//     component: Input,
-//     tags: ['autodocs'],
-// } satisfies Meta<typeof Input>;
+import { Input } from './Input';
 
-// export default meta;
+const meta = {
+    title: 'UI/molecules/Input',
+    component: Input,
+    tags: ['autodocs'],
+} satisfies Meta<typeof Input>;
 
-// type Story = StoryObj<typeof Input>;
+export default meta;
 
-// export const Default: Story = {
-//     args: {
-//         type: 'text',
-//         placeholder: 'Placeholder',
-//         name: 'name',
-//     },
-// };
+type Story = StoryObj<typeof Input>;
 
-// export const Primary: Story = {
-//     args: {},
-// };
+export const Default: Story = {
+    args: {
+        label: 'Hello',
+    },
+};
 
-// export const Secondary: Story = {
-//     args: {},
-// };
+export const Primary: Story = {
+    args: {
+        label: "Hi!",
+    },
+};

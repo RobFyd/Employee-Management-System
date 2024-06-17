@@ -3,9 +3,6 @@ import { Label } from "../../atoms/Label";
 
 type Props = ComponentProps<"input"> & {
     label: string;
-    type: string;
-    placeholder: string;
-    name: string;
 };
 
 export const Input = ({ label, type, value, onChange, ...rest }: Props) => {
