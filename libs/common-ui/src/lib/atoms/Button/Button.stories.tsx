@@ -14,13 +14,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Hello',
+    label: 'default Button',
   },
 };
 
 export const Primary: Story = {
   args: {
-    label: 'Hello',
+    label: 'Primary Button',
     bgColor: 'amethyst',
     color: 'emerald',
   },
@@ -28,7 +28,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Hello',
+    label: 'Secondary Button',
     bgColor: 'peterRiver',
     color: 'amethyst',
   },
