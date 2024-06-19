@@ -7,7 +7,7 @@ type Props = ComponentProps<"label"> & {
 export const Label = ({ id, children }: Props) => {
     return (
         <label className="block" htmlFor={id}>
-            <span className="block text-sm font-medium text-slate-700 dark:text-white">
+            <span className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                 {children}
             </span>
         </label>

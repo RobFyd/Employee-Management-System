@@ -14,12 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'Hello',
+    children: 'Default Label',
   },
 };
 
 export const Primary: Story = {
   args: {
-    children: 'Hello2',
+    children: 'Primary Label',
   },
 };
