@@ -1,4 +1,4 @@
-import { FormEventHandler, useState, useRef } from 'react';
+import { FormEventHandler, useState, useRef, useEffect } from 'react';
 import { Button, Input } from "@ems/common-ui";
 
 import "./RegistrationForm.module.css";
@@ -10,6 +10,7 @@ export const RegistrationForm = () => {
     const firstNameRef = useRef<HTMLInputElement>(null);
     const lastNameRef = useRef<HTMLInputElement>(null);
     // const ageRef = useRef<HTMLInputElement>(null);
+    let adult = false;
 
     const handleSubmit: FormEventHandler = (event) => {
         event.preventDefault();
@@ -17,9 +18,13 @@ export const RegistrationForm = () => {
         console.log({ firstName: firstNameRef.current?.value });
     };
 
+    useEffect(() => {
+        adult = age >= 18;
+    }, [age]);
+
     return (
         <div>
-            <div>Current age: {age}</div>
+            <div>Current age: {age} ({adult ? "Yes" : "No"})</div>
             <form onSubmit={handleSubmit}>
                 <div>
                     <Input label="First name:" ref={firstNameRef} />
