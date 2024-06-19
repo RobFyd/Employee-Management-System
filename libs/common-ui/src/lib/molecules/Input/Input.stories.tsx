@@ -23,3 +23,17 @@ export const Primary: Story = {
         label: "Primary Input",
     },
 };
+
+export const Disabled: Story = {
+        args: {
+            label: "Disabled Input",
+            disabled: true,
+        },
+};
+
+export const Invalid: Story = {
+    args: {
+        label: "Invalid Input",
+        // invalid: true,
+    },
+};
