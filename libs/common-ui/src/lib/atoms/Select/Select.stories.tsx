@@ -22,9 +22,19 @@ export const Default: Story = {
 };
 
 export const Primary: Story = {
-    args: {},
+    args: {
+        name: 'select',
+        id: 'select',
+        size: 2,
+        required: true,
+    },
 };
 
 export const Secondary: Story = {
-    args: {},
+    args: {
+        name: 'select',
+        id: 'select',
+        size: 1,
+        required: true,
+    },
 };
