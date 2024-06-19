@@ -14,12 +14,12 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
     args: {
-        label: 'Hello',
+        label: 'Default Input',
     },
 };
 
 export const Primary: Story = {
     args: {
-        label: "Hi!",
+        label: "Primary Input",
     },
 };
