@@ -427,8 +427,7 @@ export function NxWelcome({ title }: { title: string }) {
             <br />
 
             <div>
-              <h3>Type your name</h3>
-              <Input type="text" name="" placeholder="Your name" />
+              <Input label="Type your name" type="text" name="" placeholder="Your name" />
             </div>
             <br />
             <div>
