@@ -1,5 +1,5 @@
 import { FormEventHandler, useState, useRef } from 'react';
-import { Button } from "@ems/common-ui";
+import { Button, Input } from "@ems/common-ui";
 
 import "./RegistrationForm.module.css";
 
@@ -20,26 +20,13 @@ export const RegistrationForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="firstName">First name: </label>
-                <input
-                    id="firstName"
-                    ref={firstNameRef}
-                />
+                <Input label="First name:" ref={firstNameRef} />
             </div>
             <div>
-                <label htmlFor="lastName">Last name: </label>
-                <input
-                    id="lastName"
-                    ref={lastNameRef}
-                />
+                <Input label="Last name: " ref={lastNameRef} />
             </div>
             <div>
-                <label htmlFor="age">Age: </label>
-                <input
-                    id="age"
-                    type="number"
-                    ref={ageRef}
-                />
+                <Input label="Age: " id="age" type="number" ref={ageRef} />
             </div>
             <Button type="submit" label="Send" />
         </form>
