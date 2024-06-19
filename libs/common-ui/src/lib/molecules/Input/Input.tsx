@@ -16,6 +16,7 @@ export const Input = forwardRef(
                 <Label id={id}>{label}</Label>
                 <input
                     id={id}
+                    ref={ref}
                     type={type}
                     defaultValue={value}
                     onChange={onChange}
