@@ -6,7 +6,10 @@ import "./RegistrationForm.module.css";
 export const RegistrationForm = () => {
     // const [firstName, setFirstName] = useState('');
     // const [lastName, setLastName] = useState('');
-    const [age, setAge] = useState(0);
+    // const [age, setAge] = useState(0);
+    const [age, setAge] = useState<number>(() => {
+        return parseInt(localStorage.getItem('userAge') || '', 10)
+    });
     const firstNameRef = useRef<HTMLInputElement>(null);
     const lastNameRef = useRef<HTMLInputElement>(null);
     // const ageRef = useRef<HTMLInputElement>(null);
