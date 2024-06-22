@@ -16,6 +16,7 @@ export const RegistrationForm = () => {
         event.preventDefault();
         // console.log(firstName, lastName, age);
         console.log({ firstName: firstNameRef.current?.value });
+        localStorage.setItem('userAge', `${age}`);
     };
 
     useEffect(() => {
