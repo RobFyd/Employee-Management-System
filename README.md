@@ -14,7 +14,7 @@ We will verify our skills writing Employee Management System (EMS). This system 
 
 ## Tools used:
 
-![TechnologiesIcons](https://skillicons.dev/icons?i=html,css,js,ts,react,storybook,nextjs,nestjs,nx,chromatic,vite,tailwind,github,vscode)
+![TechnologiesIcons](https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,storybook,nestjs,nx,chromatic,vite,tailwind,github,vscode)
 
 ## Tech Stack:
 
