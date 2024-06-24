@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
-import NxWelcome from './nx-welcome';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="greetings" />
+      <RouterProvider router={router} />
     </div>
   );
 }
