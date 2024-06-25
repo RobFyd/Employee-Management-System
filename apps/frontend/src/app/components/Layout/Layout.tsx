@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { ROUTE } from "../../routes";
 
 
 export const Layout = () => {
@@ -7,16 +8,16 @@ export const Layout = () => {
             <nav>
                 <ul className="flex list-none">
                     <li className="mx-2">
-                        <Link to="home">Home</Link>
+                        <Link to={ROUTE.HOME}>Home</Link>
                     </li>
                     <li className="mx-2">
-                        <Link to="/about">About</Link>
+                        <Link to={ROUTE.ABOUT}>About</Link>
                     </li>
                     <li className="mx-2">
-                        <Link to="/contact">Contact</Link>
+                        <Link to={ROUTE.CONTACT}>Contact</Link>
                     </li>
                     <li className="mx-2">
-                        <Link to="/employees">Employees</Link>
+                        <Link to={ROUTE.EMPLOYEES}>Employees</Link>
                     </li>
                 </ul>
             </nav>
