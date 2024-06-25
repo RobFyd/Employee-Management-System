@@ -5,17 +5,17 @@ export const Layout = () => {
     return (
         <div>
             <nav>
-                <ul>
-                    <li>
+                <ul className="flex list-none">
+                    <li className="mx-2">
                         <Link to="home">Home</Link>
                     </li>
-                    <li>
+                    <li className="mx-2">
                         <Link to="/about">About</Link>
                     </li>
-                    <li>
+                    <li className="mx-2">
                         <Link to="/contact">Contact</Link>
                     </li>
-                    <li>
+                    <li className="mx-2">
                         <Link to="/employees">Employees</Link>
                     </li>
                 </ul>

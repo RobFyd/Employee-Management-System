@@ -1,9 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { EmployeesPage } from "./pages/EmployeesPage";
+import { ROUTE } from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -11,19 +12,19 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: 'home',
+        path: ROUTE.HOME,
         element: <HomePage />,
       },
       {
-        path: 'about',
+        path: ROUTE.ABOUT,
         element: <AboutPage />,
       },
       {
-        path: 'contact',
+        path: ROUTE.CONTACT,
         element: <ContactPage />,
       },
       {
-        path: 'employees',
+        path: ROUTE.EMPLOYEES,
         element: <EmployeesPage />,
       },
     ],
