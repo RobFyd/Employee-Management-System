@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
 
 type Props = {
-    user: boolean;
-    children: React.ReactNode;
+    user?: boolean;
+    element: React.ReactNode;
 };
 
-export const ProtectedRoute = ({ children, user = false }: Props) => {
+export const ProtectedRoute = ({ element, user = false }: Props) => {
     if (user) {
-        return children;
+        return element;
     }
     return <Navigate to="/registration" />;
 };
