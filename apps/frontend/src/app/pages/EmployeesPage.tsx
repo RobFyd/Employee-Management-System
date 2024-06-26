@@ -1,7 +1,9 @@
+import { Header } from '@ems/common-ui'
+
 export const EmployeesPage = () => {
     return (
         <div>
-            <h1 className="text-2xl font-bold">Employees</h1>
+            <Header>Employees</Header>
             <p>Welcome to the employees page!</p>
         </div>
     )

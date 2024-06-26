@@ -1,7 +1,9 @@
+import { Header } from '@ems/common-ui'
+
 export const HomePage = () => {
     return (
         <div>
-            <h1 className="text-2xl font-bold">Home</h1>
+            <Header>Home</Header>
             <p>Welcome to the home page!</p>
         </div>
     )
