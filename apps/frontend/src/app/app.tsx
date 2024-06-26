@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { EmployeesPage } from "./pages/EmployeesPage";
+import { RegistrationPage } from "./pages/RegistrationPage";
 import { ROUTE } from "./routes";
 
 const router = createBrowserRouter([
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
+      {
+        path: ROUTE.REGISTRATION,
+        element: <RegistrationPage />,
+      },
       {
         path: ROUTE.HOME,
         element: <HomePage />,
