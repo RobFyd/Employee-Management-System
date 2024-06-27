@@ -3,12 +3,11 @@ import { AboutPage } from '../AboutPage';
 
 const meta = {
     title: 'Pages/AboutPage',
-    component: RegistrationForm,
-    // tags: ['autodocs'],
-  } satisfies Meta<typeof RegistrationForm>;
+    component: AboutPage,
+  } satisfies Meta<typeof AboutPage>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const _AboutPage: Story = {};
