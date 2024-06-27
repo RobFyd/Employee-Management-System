@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AboutPage } from '../AboutPage';
+import { ContactPage } from '../ContactPage';
 
 const meta = {
-    title: 'Pages/AboutPage',
-    component: AboutPage,
-  } satisfies Meta<typeof AboutPage>;
+    title: 'Pages/ContactPage',
+    component: ContactPage,
+  } satisfies Meta<typeof ContactPage>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const _AboutPage: Story = {};
+export const _ContactPage: Story = {};
