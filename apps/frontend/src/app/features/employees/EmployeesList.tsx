@@ -50,13 +50,20 @@ export const EmployeesList = () => {
                 }
                 //
             })
-            .then((responseData) =>
+            .then((responseData) => {
                 setState({
                     data: (responseData as ApiResponse).results,
                     isLoading: false,
                     isError: false,
-                })
-            );
+                });
+            })
+            .catch(() => {
+                setState({
+                    data: undefined,
+                    isLoading: false,
+                    isError: true,
+                });
+            });
     }, []);
 
     if (isLoading) {
