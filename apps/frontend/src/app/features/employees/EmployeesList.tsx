@@ -27,12 +27,12 @@ export const EmployeesList = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://randomuser.me/api/')
+        fetch('https://randomuser.me/api/?results=5')
             .then(response => {
                 if (response.ok) {
                     return response.json();
                 }
-                throw new Error('Something went wrong');
+                throw new Error('Uh oh, something has gone wrong. Please tweet us @randomapi about the issue. Thank you.');
             })
             .then((responseData) => setData(responseData.results));
     }, []);
