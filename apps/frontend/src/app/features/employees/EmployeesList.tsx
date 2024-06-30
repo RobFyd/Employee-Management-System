@@ -1,30 +1,20 @@
 import { Header } from "@ems/common-ui"
 import { useEffect, useState } from "react";
 
-const data = [{
+interface UserDto {
     name: {
-        first: 'John',
-        last: 'Kowalczyk'
-    },
-    email: 'john@kowalski.en',
+        first: string;
+        last: string;
+    };
+    email: string;
     id: {
-        name: '123'
-    }
-},
-{
-    name: {
-        first: 'Eleonora',
-        last: 'Smith'
-    },
-    email: 'eleonora@smith.en',
-    id: {
-        name: '456'
-    }
-}]
+        name: string;
+    };
+}
 
 export const EmployeesList = () => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<UserDto[]>([]);
 
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=5')
