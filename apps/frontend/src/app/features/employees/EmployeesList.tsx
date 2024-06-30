@@ -12,9 +12,35 @@ interface UserDto {
     };
 }
 
-export const EmployeesList = () => {
+type State = {
+    // pending
+    data: undefined,
+    isLoading: true,
+    isError: false,
+} | {
+    // fulfilled
+    data: UserDto[];
+    isLoading: false;
+    isError: false;
+} | {
+    // rejected
+    data: undefined;
+    isLoading: false;
+    isError: true;
+};
 
-    const [data, setData] = useState<UserDto[]>([]);
+interface ApiResponse {
+    results: UserDto[];
+}
+
+export const EmployeesList = () => {
+    const [state, setState] = useState<State>({
+        data: undefined,
+        isLoading: true,
+        isError: false,
+    });
+
+    const { data, isLoading, isError } = state;
 
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=5')
@@ -22,10 +48,24 @@ export const EmployeesList = () => {
                 if (response.ok) {
                     return response.json();
                 }
-                throw new Error('Uh oh, something has gone wrong. Please tweet us @randomapi about the issue. Thank you.');
+                //
             })
-            .then((responseData) => setData(responseData.results));
+            .then((responseData) =>
+                setState({
+                    data: (responseData as ApiResponse).results,
+                    isLoading: false,
+                    isError: false,
+                })
+            );
     }, []);
+
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
+
+    if (isError) {
+        return <p>Something went wrong...</p>;
+    }
 
     return (
         <div>
