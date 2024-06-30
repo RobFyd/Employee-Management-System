@@ -1,9 +1,10 @@
 import { Header } from "@ems/common-ui"
+import { useEffect, useState } from "react";
 
 const data = [{
     name: {
         first: 'John',
-        last: 'Kowalski'
+        last: 'Kowalczyk'
     },
     email: 'john@kowalski.en',
     id: {
@@ -22,6 +23,20 @@ const data = [{
 }]
 
 export const EmployeesList = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('https://randomuser.me/api/')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Something went wrong');
+            })
+            .then((responseData) => setData(responseData.results));
+    }, []);
+
     return (
         <div>
             <Header>List</Header>
@@ -35,5 +50,3 @@ export const EmployeesList = () => {
         </div>
     );
 };
-
-// 4:58
