@@ -25,7 +25,15 @@ export const EmployeesList = () => {
     return (
         <div>
             <Header>List</Header>
-            {data.map()}
+            {data.map((elem) => (
+                <div key={elem.id.name}>
+                    <div>
+                        {elem.name.first} {elem.name.last}
+                    </div>
+                </div>
+            ))}
         </div>
-    )
-}
+    );
+};
+
+// 4:58
