@@ -1,11 +1,28 @@
 import { useEffect, useState } from "react";
 
-interface ApiResponse {
-  results: any;
+type State<S> = {
+    // pending
+    data: undefined,
+    isLoading: true,
+    isError: false,
+} | {
+    // fulfilled
+    data: S;
+    isLoading: false;
+    isError: false;
+} | {
+    // rejected
+    data: undefined;
+    isLoading: false;
+    isError: true;
+};
+
+interface ApiResponse<S> {
+  results: S;
 }
 
-export const useApi = (url: string) => {
-  const [state, setState] = useState<State>({
+export const useApi = <T>(url: string) => {
+  const [state, setState] = useState<State<T>>({
     data: undefined,
     isLoading: true,
     isError: false,
@@ -21,7 +38,7 @@ export const useApi = (url: string) => {
       })
       .then((responseData) => {
         setState({
-          data: (responseData as ApiResponse).results,
+          data: (responseData as ApiResponse<T>).results,
           isLoading: false,
           isError: false,
         });
