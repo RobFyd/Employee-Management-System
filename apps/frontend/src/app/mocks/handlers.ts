@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-const API_URL = 'https://api.airtable.com/v0/appJ0votvrhmT0Sbq/products?';
+const API_URL = 'https://randomuser.me/api/?results=10';
 
 export const handlers = [
   rest.get(API_URL, (_req, res, ctx) => {
@@ -9,12 +9,24 @@ export const handlers = [
       ctx.json({
         records: [
           {
-            id: '123',
-            fields: {
-              name: 'New Product',
-              price: 100,
-              description: 'This is a new product',
+            name: {
+              first: 'John',
+              last: 'Maverick',
             },
+            email: 'john@maverick.uk',
+            id: {
+              name: '123',
+            },
+          },
+          {
+            name: {
+              first: 'Jane',
+              last: 'Doe',
+            },
+            email: 'jane@doe.uk',
+            id: {                           ////////
+              name: '456',              // 10 minutes //
+            },                              ////////
           },
         ],
       })
