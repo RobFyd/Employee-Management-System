@@ -30,6 +30,7 @@ We will verify our skills writing Employee Management System (EMS). This system 
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 -NX
 -Chromatic
+-MockServiceWorker
 
 
 Enjoy 💪
