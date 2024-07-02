@@ -94,6 +94,9 @@
           "quiet": true
         }
       }
+    },
+    "msw-update": {
+      "command": "npx msw init public --no-save"
     }
   }
 }
