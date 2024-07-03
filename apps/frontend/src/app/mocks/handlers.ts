@@ -7,7 +7,7 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json({
-        records: [
+        results: [
           {
             name: {
               first: 'John',
