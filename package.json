@@ -89,8 +89,6 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
     "jsdom": "~22.1.0",
-    "msw": "^2.3.1",
-    "msw-storybook-addon": "^2.0.2",
     "nx": "19.2.3",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",
