@@ -14,7 +14,7 @@ We will verify our skills writing Employee Management System (EMS). This system 
 
 ## Tools used:
 
-![TechnologiesIcons](https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,storybook,nestjs,nx,chromatic,vite,tailwind,github,vscode)
+![TechnologiesIcons](https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,nestjs,vite,tailwind,github,vscode)
 
 ## Tech Stack:
 
@@ -30,7 +30,7 @@ We will verify our skills writing Employee Management System (EMS). This system 
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - NX
 - Chromatic
-- MockServiceWorker
+- Mock Service Worker
 - React Testing Library
 
 
