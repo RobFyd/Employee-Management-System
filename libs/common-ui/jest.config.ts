@@ -2,7 +2,6 @@
 export default {
   displayName: 'common-ui',
   preset: '../../jest.preset.js',
-  watch: true,
   globals: {
     NODE_ENV: 'test'
   },
