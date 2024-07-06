@@ -40,6 +40,7 @@
       },
       "configurations": {
         "ci": {
+          "quiet": true,
           "ci": true,
           "codeCoverage": true,
           "watch": false
