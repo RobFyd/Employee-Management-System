@@ -29,7 +29,8 @@
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/common-ui/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "watch": true
       }
     },
     "storybook": {
@@ -41,10 +42,8 @@
       "configurations": {
         "ci": {
           "ci": true,
-          "codeCoverage": true
-        },
-        "watch": {
-          "watch": true
+          "codeCoverage": true,
+          "watch": false
         }
       }
     },
