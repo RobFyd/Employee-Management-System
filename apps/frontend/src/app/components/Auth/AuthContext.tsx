@@ -7,4 +7,6 @@ interface AuthContextType {
     isLoggedIn: boolean;
 }
 
-const AuthContext = createContext<AuthContextType>({ isLoggedIn: false });
+export const AuthContext = createContext<AuthContextType>({
+    isLoggedIn: false
+});
