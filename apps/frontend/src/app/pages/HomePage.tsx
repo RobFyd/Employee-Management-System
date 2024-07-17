@@ -10,6 +10,8 @@ export const HomePage = () => {
             <AuthContextProvider>
                 <AuthInfo />
             </AuthContextProvider>
+
+            {/* <AuthInfo /> */}
         </div>
     );
 };
