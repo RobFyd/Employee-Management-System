@@ -13,6 +13,17 @@ export const AuthContext = createContext<AuthContextType>({
     setIsLogged: () => null,
 });
 
+// custom hook
+const useAuth = () => {
+    const [isLoggedIn, setIsLogged] = useState(false);
+
+    const login = () => setIsLogged(true);
+    const logout = () => setIsLogged(false);
+    const toggle = () => setIsLogged((value) => !value);
+
+    return { isLoggedIn, login, logout, toggle };
+}
+
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     const [isLoggedIn, setIsLogged] = useState(false);
     return (
