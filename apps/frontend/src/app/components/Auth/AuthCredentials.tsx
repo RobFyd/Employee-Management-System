@@ -1,12 +1,12 @@
-import { MouseEventHandler, useContext } from "react";
-import { AuthContext } from "./AuthContext";
+import { MouseEventHandler } from "react";
+import { useAuthContext } from "./AuthContext";
 import { Button } from "@ems/common-ui";
 
 export const AuthCredentials = () => {
-    const context = useContext(AuthContext);
+    const context = useAuthContext();
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-        context.setIsLogged((value) => !value);
+        context?.toggle();
     }
 
     return (
