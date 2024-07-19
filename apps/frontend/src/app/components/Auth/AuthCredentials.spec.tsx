@@ -11,7 +11,8 @@ describe('AuthCredentials component', () => {
         );
         expect(screen.getByText(/no/i)).toBeInTheDocument();
         // expect(screen.getByText('NO', {exact: false})).toBeInTheDocument();
-        fireEvent.click(screen.get);
+        fireEvent.click(screen.getByRole('button'));
+        expect(screen.getByText(/yes/i)).toBeInTheDocument();
         debug();
     });
 });
