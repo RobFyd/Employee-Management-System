@@ -5,6 +5,6 @@ import { useAuth } from './AuthContext';
 describe('useAuth hook', () => {
   it('should toggle value', () => {
     const { result } = renderHook(() => useAuth());
-    expect(result.current).toEqual(false);
+    expect(result.current.isLoggedIn).toEqual(false);
   });
 });
