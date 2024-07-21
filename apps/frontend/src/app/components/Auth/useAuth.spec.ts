@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 
 import { useAuth } from './AuthContext';
 
@@ -7,7 +7,9 @@ describe('useAuth hook', () => {
     const { result } = renderHook(() => useAuth());
     expect(result.current.isLoggedIn).toEqual(false);
 
-    result.current.toggle();
+    act(() => {
+      result.current.toggle();
+    });
     expect(result.current.isLoggedIn).toEqual(true);
   });
 });
