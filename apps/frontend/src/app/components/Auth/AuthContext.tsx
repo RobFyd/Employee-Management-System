@@ -22,7 +22,7 @@ export const useAuthContext = () => {
 }
 
 // custom hook
-const useAuth = () => {
+export const useAuth = () => {
     const [isLoggedIn, setIsLogged] = useState(false);
 
     const login = () => setIsLogged(true);
@@ -39,4 +39,4 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         </AuthContext.Provider>
     )
 }
-  // react context hook pattern
+// react context hook pattern
