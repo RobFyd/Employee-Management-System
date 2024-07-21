@@ -1,7 +1,10 @@
 import { renderHook } from '@testing-library/react';
 
-describe('useAuth hook', () => {
-    it('should toggle value', () => {
+import { useAuth } from './AuthContext';
 
-    });
+describe('useAuth hook', () => {
+  it('should toggle value', () => {
+    const { result } = renderHook(() => useAuth());
+    expect(result.current).toEqual(false);
+  });
 });
