@@ -10,15 +10,15 @@
   "files": [],
   "include": [],
   "references": [
-    // {
-    //   "path": "./tsconfig.app.json"
-    // },
-    // {
-    //   "path": "./tsconfig.spec.json"
-    // },
-    // {
-    //   "path": "./tsconfig.storybook.json"
-    // }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.storybook.json"
+    }
   ],
   "extends": "../../tsconfig.base.json"
 }
