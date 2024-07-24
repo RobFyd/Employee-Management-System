@@ -18,6 +18,15 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'wa-blue': '#184689',
+        'wa-blue-light': '#123156',
+        'wa-red': '#c0392b',
+        'wa-yellow': '#f1c410',
+        'wa-yellow-light': '#f4b743',
+      },
     },
   },
   plugins: [],
