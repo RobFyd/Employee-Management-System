@@ -105,3 +105,5 @@
 }
 
 // tu wracamy
+
+"@storybook/addon-styling": "^1.3.4",
