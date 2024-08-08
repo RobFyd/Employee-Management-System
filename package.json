@@ -2,7 +2,9 @@
   "name": "@ems/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "install-prod": "npm install --omit=dev"
+  },
   "private": true,
   "engines": {
     "node": "20.x"
