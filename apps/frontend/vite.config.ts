@@ -15,7 +15,7 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/frontend',
 
   server: {
-    port: 4200,
+    port: process.env.PORT ? +process.env.PORT : 4200,
     host: 'localhost',
   },
 
