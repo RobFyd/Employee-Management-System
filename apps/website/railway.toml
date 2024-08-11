@@ -1,7 +1,7 @@
 [build]
 builder = "NIXPACKS"
 buildCommand = "npx nx run website:build:production"
-watchPatterns = ["/website/**"]
+watchPatterns = ["/website"]
 
 [deploy]
 runtime = "V2"
