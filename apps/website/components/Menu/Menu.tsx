@@ -6,7 +6,7 @@ export const Menu = () => {
       <ul className="flex">
         <li className="mr-6">
           <Link href="/about" className="text-lg text-black">
-            About
+            About-test
           </Link>
         </li>
         <li className="mr-6">
