@@ -15,13 +15,13 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/frontend',
 
   server: {
-    port: 4200,
-    host: '0.0.0.0',
+    port: process.env.PORT ? +process.env.PORT : 4200,
+    host: 'localhost',
   },
 
   preview: {
     port: 4300,
-    host: '0.0.0.0',
+    host: 'localhost',
   },
 
   plugins: [react(), nxViteTsPaths()],
