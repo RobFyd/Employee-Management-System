@@ -18,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <Menu />
-        {children}
+        <main className="container mx-auto">
+          {children}
+        </main>
       </body>
     </html>
   );
