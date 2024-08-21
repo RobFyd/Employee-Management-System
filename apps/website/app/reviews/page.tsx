@@ -1,7 +1,9 @@
+import { Header } from '@ems/common-ui';
+
 export default function ReviewsPage() {
     return (
         <div>
-            <h1>Reviews</h1>
+            <Header>Reviews</Header>
             <p>This is the reviews page.</p>
         </div>
     );

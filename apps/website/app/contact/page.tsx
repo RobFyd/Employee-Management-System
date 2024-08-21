@@ -1,7 +1,9 @@
+import { Header } from '@ems/common-ui';
+
 export default function ContactPage() {
     return (
         <div>
-            <h1>Contact</h1>
+            <Header>Contact</Header>
             <p>This is the contact page.</p>
         </div>
     );
