@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import { Menu } from '../components';
+import { Footer } from '../components/Footer';
 import './styles.css';
 
 export const metadata = {
@@ -17,10 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <Menu />
-        <main className="container mx-auto">
-          {children}
-        </main>
+        <div className="flex flex-col h-screen">
+          <Menu />
+          <main className="container mx-auto">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
