@@ -24,6 +24,11 @@ export const Menu = () => {
             Contact
           </Link>
         </li>
+        <li className="mr-6">
+          <Link href="/dashboard" className="text-lg text-black">
+            Dashboard
+          </Link>
+        </li>
       </ul>
     </nav>
   );
