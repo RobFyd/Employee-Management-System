@@ -1,7 +1,7 @@
 export const Footer = () => {
     return (
-        <footer className="container border-t-slate-800 py-4">
-            <p className="text-center text-lg text-black">
+        <footer className="container bg-slate-900 mx-auto p-4">
+            <p className="text-center text-base text-white">
                 © 2024 All rights reserved
             </p>
         </footer>
