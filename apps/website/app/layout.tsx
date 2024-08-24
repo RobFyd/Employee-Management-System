@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${galindo.className}`}>
         <div className="flex flex-col h-screen">
           <Menu />
-          <main className="container mx-auto px-4 pt-6">
+          <main className="container h-screen mx-auto px-4 pt-6">
             {children}
           </main>
           <Footer />

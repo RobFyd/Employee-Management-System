@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const Menu = () => {
   return (
     <nav className="bg-slate-900">
-      <div className="container mx-auto p-4">
+      <div className="mx-auto p-4">
         <div className="flex justify-between">
           <ul className="flex">
             <li className="mr-6">
