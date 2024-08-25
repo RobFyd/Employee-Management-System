@@ -1,6 +1,4 @@
 import { Inter, Roboto, Galindo } from 'next/font/google'; // 643 (gzipped: 377)
-import { Menu } from '../components';
-import { Footer } from '../components/Footer';
 import './styles.css';
 
 export const metadata = {
@@ -20,13 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${galindo.className}`}>
-        <div className="flex flex-col h-screen">
-          <Menu />
-          <main className="container h-screen mx-auto px-4 pt-6">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );
