@@ -21,7 +21,7 @@ export default function PublicLayout({
     const buildCssClass = (path: string) => {
         let classes = 'text-lg text-white';
         if (path === pathName) {
-            classes = `${classes} text-red-500`;
+            classes = `${classes} text-red-300`;
         }
         return classes;
     };
