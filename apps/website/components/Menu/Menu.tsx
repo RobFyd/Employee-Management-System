@@ -3,6 +3,7 @@
 import { classMerge } from '@ems/common-ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { montserrat } from 'apps/website/app/fonts';
 
 export const Menu = () => {
   const pathName = usePathname();
@@ -12,7 +13,7 @@ export const Menu = () => {
   };
 
   return (
-    <nav className="bg-slate-900">
+    <nav className={`${montserrat.className} bg-slate-900`}>
       <div className="mx-auto p-4">
         <div className="flex justify-between">
           <ul className="flex">
