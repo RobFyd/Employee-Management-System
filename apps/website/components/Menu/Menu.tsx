@@ -1,5 +1,6 @@
 'use client';
 
+import { classMerge } from '@ems/common-ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -7,11 +8,7 @@ export const Menu = () => {
   const pathName = usePathname();
 
   const buildCssClass = (path: string) => {
-    let classes = 'text-lg text-white';
-    if (path === pathName) {
-      classes = `${classes} text-yellow-600`;
-    }
-    return classes;
+    return classMerge('text-lg text-white hover:text-yellow-600', { 'text-yellow-600': path === pathName });
   };
 
   return (
