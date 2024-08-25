@@ -9,7 +9,7 @@ export const Menu = () => {
   const buildCssClass = (path: string) => {
     let classes = 'text-lg text-white';
     if (path === pathName) {
-      classes = `${classes} text-red-400`;
+      classes = `${classes} text-red-600`;
     }
     return classes;
   };
