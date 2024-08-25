@@ -42,7 +42,7 @@ export const Menu = () => {
               </Link>
             </li>
             <li className="mr-6">
-              <Link href="/dashboard" className="text-lg text-white">
+              <Link href="/dashboard" className={buildCssClass('/dashboard')}>
                 Dashboard
               </Link>
             </li>
