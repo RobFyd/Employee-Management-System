@@ -5,6 +5,7 @@ export default function ContactPage() {
         <div>
             <Header>Contact</Header>
             <p>This is the contact page.</p>
+            <img src="/nachos.png" />
         </div>
     );
 }
