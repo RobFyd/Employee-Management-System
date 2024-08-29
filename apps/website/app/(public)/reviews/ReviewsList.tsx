@@ -13,6 +13,8 @@ export const ReviewsList = () => {
     const [reviews, setReviews] = useState<ReviewDto[] | undefined>(undefined);
 
     useEffect(() => {
-        //fetch
+        fetch('/api/reviews')
+            .then(response => response.json())
+            .then(data => setReviews(data));
     }, []);
 }
