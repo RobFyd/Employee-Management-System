@@ -31,24 +31,8 @@ export const ReviewsList = () => {
 
     console.log('token: ', process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN);
 
-    // useEffect(() => {
-    //     fetch('https://api.airtable.com/v0/appWX9InzcayFH6G4/Reviews?view=Grid%20view&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=desc', {
-    //         headers: {
-    //             Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN}`,
-    //         }
-    //     })
-    // }, []);
-
-    // useEffect(() => {
-    //     fetch('https://api.airtable.com/v0/appWX9InzcayFH6G4/Reviews?maxRecords=3&view=default', {
-    //         headers: {
-    //             Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN}`,
-    //         }
-    //     })
-    // }, []);
-
     useEffect(() => {
-        fetch('https://api.airtable.com/v0/appWX9InzcayFH6G4/Reviews?view=default&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=desc', {
+        fetch('https://api.airtable.com/v0/appWX9InzcayFH6G4/Reviews?view=default&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=asc', {
             headers: {
                 Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN}`,
             }
@@ -69,5 +53,11 @@ export const ReviewsList = () => {
             });
     }, []);
 
-    return <div></div>;
+    return <div><ul>{reviews?.map((elem) => (
+        <li key={elem.id}>
+            <div className="font-bold">{elem.content}</div>
+            <div className="text-red-900">{elem.author}</div>
+            <div className="mb-4">{elem.created_at}</div>
+        </li>
+    ))}</ul></div>;
 }
