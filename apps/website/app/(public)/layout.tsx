@@ -14,7 +14,7 @@ export default function PublicLayout({
     return (
         <div className="flex flex-col h-screen">
             <Menu />
-            <main className="container h-screen mx-auto px-4 pt-6">
+            <main className="container flex-grow mx-auto px-4 pt-6">
                 {children}
             </main>
             <Footer />
