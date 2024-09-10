@@ -1,3 +1,5 @@
+'use client';
+
 import { Header } from '@ems/common-ui';
 
 export default function ReviewsError() {

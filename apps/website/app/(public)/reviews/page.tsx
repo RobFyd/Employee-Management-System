@@ -3,6 +3,7 @@ import { fetchReviews } from './services';
 // import { ReviewsList } from './ReviewsList';
 
 export default async function ReviewsPage() {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     const reviews = await fetchReviews();
 
     return (
