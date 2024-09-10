@@ -9,6 +9,7 @@ export default async function ReviewsPage() {
         <div>
             <Header>Reviews</Header>
             <p>This is the reviews page.</p>
+            <br />
             {/* <ReviewsList /> */}
             <ul>{reviews?.map((elem) => (
                 <li key={elem.id}>
