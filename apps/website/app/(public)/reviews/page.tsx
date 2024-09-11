@@ -1,5 +1,6 @@
 import { Header } from '@ems/common-ui';
 import { fetchReviews } from './services';
+import Link from 'next/link';
 // import { notFound } from 'next/navigation';
 // import { ReviewsList } from './ReviewsList';
 
@@ -12,7 +13,8 @@ export default async function ReviewsPage() {
         <div>
             <Header>Reviews</Header>
             <p>This is the reviews page.</p>
-            <br />
+            <Link href="/reviews/create" className="my-2 block text-blue-600">Create a review</Link>
+
             {/* <ReviewsList /> */}
             <ul>{reviews?.map((elem) => (
                 <li key={elem.id}>
