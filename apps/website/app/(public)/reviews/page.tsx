@@ -13,7 +13,7 @@ export default async function ReviewsPage() {
         <div>
             <Header>Reviews</Header>
             <p>This is the reviews page.</p>
-            <Link href="/reviews/create" className="my-2 block text-blue-600">Create a review</Link>
+            <Link href="/reviews/create" className="my-3 block text-blue-600">Create a review</Link>
 
             {/* <ReviewsList /> */}
             <ul>{reviews?.map((elem) => (
