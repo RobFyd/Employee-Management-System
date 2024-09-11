@@ -1,12 +1,18 @@
 import { Button, Header, Input } from "@ems/common-ui";
+import { CreateReviewDto } from "../types";
+import { redirect } from "next/dist/server/api-utils";
 
-const createReview = async (formDta: formData) => {
+const createReview = async (formData: FormData) => {
     'use server';
 
-    const review = {
-        content: formData.get('content'),
-        author: formData.get('author'),
-    }
+    const review: CreateReviewDto = {
+        content: formData.get('content') as string,
+        author: formData.get('author') as string,
+    };
+
+    await createReviewInAirtable(review);
+
+    redirect('/reviews');
 }
 
 export default function CreateReview() {
