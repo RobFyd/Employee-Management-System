@@ -11,6 +11,8 @@ const createReview = async (formData: FormData) => {
     const review: CreateReviewDto = {
         content: formData.get('content') as string,
         author: formData.get('author') as string,
+        // points: formData.get('points') as string,
+        points: parseInt(formData.get('points') as string)
     };
 
     await createReviewInAirtable(review);
@@ -25,6 +27,7 @@ export default function CreateReview() {
             <form action={createReview}>
                 <Input label="Content" name="content" />
                 <Input label="Author" name="author" />
+                <Input label="Points" name="points" />
                 <Button label="Submit" type="submit" />
             </form>
         </div>
