@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { Button, Header, Input } from "@ems/common-ui";
 import { CreateReviewDto } from "../types";
 import { createReviewInAirtable } from "../services";
+// import { error } from "console";
 
 const createReview = async (formData: FormData) => {
     'use server';
@@ -15,10 +16,19 @@ const createReview = async (formData: FormData) => {
         points: parseInt(formData.get('points') as string)
     };
 
-    await createReviewInAirtable(review);
-    revalidatePath('/reviews');  // no cashing
-    redirect('/reviews');
-}
+    const result = createReviewSchema.safeParse(review);
+    if (!result.success) {
+        console.log(result.error.issues);
+
+        return {
+            status: error,
+        };
+    } else {
+        await createReviewInAirtable(review);
+        revalidatePath('/reviews');  // no cashing
+        redirect('/reviews');
+    }
+};
 
 export default function CreateReview() {
     return (
