@@ -23,8 +23,8 @@ export default function CreateReview() {
         <div>
             <Header>Create review</Header>
             <form action={createReview}>
-                <Input label="Content" />
-                <Input label="Author" />
+                <Input label="Content" name="content" />
+                <Input label="Author" name="author" />
                 <Button label="Submit" type="submit" />
             </form>
         </div>
