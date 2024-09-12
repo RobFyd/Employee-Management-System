@@ -1,4 +1,7 @@
+// import { unstable_noStore as noStore } from 'next/cache';
+
 import { format } from 'date-fns';
+import { CreateReviewDto } from './types';
 
 type Review = {
   id: string;
@@ -19,6 +22,7 @@ type AirtableReviewResponseDto = {
 };
 
 export const fetchReviews = async () => {
+  // noStore();
   const response = await fetch(
     `${process.env.AIRTABLE_BASE_URL}/Reviews?view=default&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=asc`,
     {
@@ -37,5 +41,19 @@ export const fetchReviews = async () => {
       created_at: format(elem.fields.created_at, 'hh:mm:ss dd/MM/yyyy'),
     });
   });
-    return reviews;
+  return reviews;
+};
+
+export const createReviewInAirtable = async (review: CreateReviewDto) => {
+  const response = await fetch(`${process.env.AIRTABLE_BASE_URL}/reviews`, {
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_API_TOKEN}`,
+      'Content-type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify({ records: [{ fields: review }] }),
+  });
+  const data = await response.json();
+
+  console.log('createReviewInAirtable', { data: data.records[0] });
 };
