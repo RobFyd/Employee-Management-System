@@ -12,7 +12,7 @@ const createReview = async (formData: FormData) => {
         content: formData.get('content') as string,
         author: formData.get('author') as string,
         // points: formData.get('points') as string,
-        points: parseInt(formData.get('points') as string)
+        // points: parseInt(formData.get('points') as string)
     };
 
     const result = createReviewSchema.safeParse(review);
