@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
 
@@ -20,8 +20,8 @@ export const CreateForm = () => {
         resolver: zodResolver(createReviewSchema),
     });
 
-    const clientAction = async (formData: FormData) => {
-        const serverResult = await createReview(formData);
+    const clientAction: SubmitHandler<CreateReviewDto> = async (data) => {
+        const serverResult = await createReview(data);
         console.log({ serverResult });
         if (serverResult.status === 'error') {
             setIsError(true);
