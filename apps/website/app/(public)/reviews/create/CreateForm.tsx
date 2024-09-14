@@ -31,10 +31,10 @@ export const CreateForm = () => {
     return (
         <>
             {isError && <p>Oh no server error!</p>}
-            <form action={clientAction}>
-                <Input label="Content" name="content" />
-                <Input label="Author" name="author" />
-                <Input label="Points" name="points" />
+            <form onSubmit={handleSubmit(clientAction)}>
+                <Input {...register('content')} label="Content" error={errors.content} />
+                <Input {...register('author')} label="Author" error={errors.author} />
+                <Input {...register('points')} label="Points" error={errors.points} />
                 <Button label="Submit" type="submit" />
             </form>
         </>
