@@ -12,11 +12,24 @@ import { createReview } from "./actions";
 export const CreateForm = () => {
     const [isError, setIsError] = useState(false);
 
-    const ClientAction = async (formData: FormData) => {
+    const clientAction = async (formData: FormData) => {
         const serverResult = await createReview(formData);
-        console.loglog({ serverResult });
+        console.log({ serverResult });
         if (serverResult.status === 'error') {
             setIsError(true);
         }
     };
+
+    return (
+        <>
+            {isError && <p>Oh no server error!</p>}
+            <form action={clientAction}>
+                <Input label="Content" name="content" />
+                <Input label="Author" name="author" />
+                <Input label="Points" name="points" />
+                <Button label="Submit" type="submit" />
+            </form>
+        </>
+    );
 };
+
