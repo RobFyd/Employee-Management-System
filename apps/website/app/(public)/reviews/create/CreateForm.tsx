@@ -3,7 +3,7 @@
 import { useState, useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { Button, Input } from "@ems/common-ui";
 
