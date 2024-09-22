@@ -1,5 +1,5 @@
-import { Header } from "@ems/common-ui";
-import { CreateForm } from "./CreateForm";
+import { Header } from '@ems/common-ui';
+import { CreateForm } from './CreateForm';
 
 export default function CreateReview() {
     return (
@@ -7,5 +7,5 @@ export default function CreateReview() {
             <Header>Create review</Header>
             <CreateForm />
         </div>
-    )
+    );
 }
