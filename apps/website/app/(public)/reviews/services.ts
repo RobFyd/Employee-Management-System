@@ -57,7 +57,14 @@
 // };
 
 import { format } from 'date-fns';
-import { CreateReviewDto, Review } from './types';
+import { CreateReviewDto } from './types';
+
+type Review = {
+  id: string;
+  content: string;
+  author: string;
+  created_at: string;
+};
 
 type AirtableReviewResponseDto = {
   records: {
@@ -71,6 +78,7 @@ type AirtableReviewResponseDto = {
 };
 
 export const fetchReviews = async () => {
+  // noStore();
   const response = await fetch(
     `${process.env.AIRTABLE_BASE_URL}/reviews?view=default&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=desc`,
     {
@@ -104,5 +112,5 @@ export const createReviewInAirtable = async (review: CreateReviewDto) => {
   });
   const data = await response.json();
 
-  console.log({ data });
+  console.log('createReviewInAirtable', { data: data.records[0] });
 };
