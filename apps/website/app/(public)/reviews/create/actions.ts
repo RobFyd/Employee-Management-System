@@ -29,24 +29,27 @@
 
 'use server';
 
-import { redirect } from 'next/navigation';
+import { revalidatePath } from 'next/cache';
 import { createReviewInAirtable } from '../services';
 import { CreateReviewDto, createReviewSchema } from '../types';
 
-export const createReview = async (formData: FormData) => {
-  const rawReview: CreateReviewDto = {
-    content: formData.get('content') as string,
-    author: formData.get('author') as string,
-  };
+export const createReview = async (review: CreateReviewDto) => {
+  'use server';
 
-  const result = createReviewSchema.safeParse(rawReview);
+  const result = createReviewSchema.safeParse(review);
   if (!result.success) {
+    console.log(result.error.issues);
+
     return {
-      error: true,
+      status: 'error',
     };
   } else {
-    await createReviewInAirtable(rawReview);
+    await createReviewInAirtable(review);
+    revalidatePath('/reviews');
 
-    redirect('/reviews');
+    return {
+      status: 'success',
+      payload: review,
+    };
   }
 };
