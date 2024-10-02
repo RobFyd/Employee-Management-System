@@ -13,7 +13,6 @@ import { CreateReviewDto, createReviewSchema } from '../types';
 export const CreateForm = () => {
   const [isError, setIsError] = useState(false);
   const { push } = useRouter();
-  // const { refresh } = useRouter();
   const [isPending, startTransition] = useTransition();
   const {
     register,
@@ -30,7 +29,6 @@ export const CreateForm = () => {
       setIsError(true);
     } else {
       startTransition(() => push('/reviews'));
-      // startTransition(() => refresh());
     }
   };
 

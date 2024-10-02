@@ -1,7 +1,6 @@
 import { Header } from '@ems/common-ui';
 import { fetchReviews } from './services';
 import Link from 'next/link';
-// import { ReviewsList } from './ReviewsList';
 
 export default async function ReviewsPage() {
     // await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -13,7 +12,6 @@ export default async function ReviewsPage() {
             <p>This is the reviews page.</p>
             <Link href="/reviews/create" className="my-3 block text-blue-600">Create a review</Link>
 
-            {/* <ReviewsList /> */}
             <ul>{reviews?.map((elem) => (
                 <li key={elem.id}>
                     <div className="font-bold">{elem.content}</div>
