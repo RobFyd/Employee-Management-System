@@ -3,13 +3,14 @@
 import { classMerge } from '@ems/common-ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { montserrat } from '../../app/fonts';
 
 export const Menu = () => {
   const pathName = usePathname();
 
   const buildCssClass = (path: string) => {
-    return classMerge('text-lg text-white hover:text-yellow-600', { 'text-yellow-600': pathName.includes(path) });  //{ 'text-yellow-600': path === pathName }
+    return classMerge('text-lg text-white hover:text-yellow-600', { 'text-yellow-600': pathName.includes(path) });  //{ 'text-yellow-600': path === pathName } - only for exact match
   };
 
   return (
