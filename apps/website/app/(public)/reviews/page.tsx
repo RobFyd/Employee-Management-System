@@ -1,11 +1,10 @@
 import { Header } from '@ems/common-ui';
-import { fetchReviews, fetchReviewsCount } from './services';
 import Link from 'next/link';
+import ReviewsList from './components/ReviewsList';
+import ReviewsCount from './components/ReviewsCount';
+import { Suspense } from 'react';
 
 export default async function ReviewsPage() {
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
-    const reviews = await fetchReviews();
-    const reviewsCount = await fetchReviewsCount();
 
     return (
         <div>
@@ -13,15 +12,13 @@ export default async function ReviewsPage() {
             <p>This is the reviews page.</p>
             <Link href="/reviews/create" className="my-3 block text-blue-600 flex justify-center">Create a review</Link>
 
-            <h3 className="mb-4 flex justify-center">Count: {reviewsCount}</h3>
+            <Suspense fallback={<div>Loading count...</div>}>
+                <ReviewsCount />
+            </Suspense>
 
-            <ul>{reviews?.map((elem) => (
-                <li key={elem.id}>
-                    <div className="font-bold">{elem.content}</div>
-                    <div className="text-red-900">{elem.author}</div>
-                    <div className="mb-4">{elem.created_at}</div>
-                </li>
-            ))}</ul>
+            <Suspense fallback={<div>Loading list...</div>}>
+                <ReviewsList />
+            </Suspense>
         </div>
     );
 }
