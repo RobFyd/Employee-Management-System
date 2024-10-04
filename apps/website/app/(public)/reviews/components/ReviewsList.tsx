@@ -8,7 +8,7 @@ export default async function ReviewsList() {
         <div>
             <ul>{reviews?.map((elem) => (
                 <li key={elem.id}>
-                    <div className="font-bold"><Link href={`
+                    <div className="font-bold text-blue-700"><Link href={`
                         /reviews/${elem.id}
                     `}>{elem.content}</Link></div>
                     <div className="text-red-900">{elem.author}</div>
