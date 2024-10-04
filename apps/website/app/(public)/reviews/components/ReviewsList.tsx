@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { fetchReviews } from '../services';
 
 export default async function ReviewsList() {
@@ -7,7 +8,9 @@ export default async function ReviewsList() {
         <div>
             <ul>{reviews?.map((elem) => (
                 <li key={elem.id}>
-                    <div className="font-bold">{elem.content}</div>
+                    <div className="font-bold"><Link href={`
+                        /reviews/${elem.id}
+                    `}>{elem.content}</Link></div>
                     <div className="text-red-900">{elem.author}</div>
                     <div className="mb-4">{elem.created_at}</div>
                 </li>
