@@ -1,1 +1,3 @@
-export * from './lib/prisma-client';
+import prisma from './lib/db';
+
+export default prisma;
