@@ -4,19 +4,11 @@
   "sourceRoot": "libs/prisma-client/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "seed": {
+      "command": "ts-node ./seed.ts",
       "options": {
-        "outputPath": "dist/libs/prisma-client",
-        "main": "libs/prisma-client/src/index.ts",
-        "tsConfig": "libs/prisma-client/tsconfig.lib.json",
-        "assets": ["libs/prisma-client/*.md"]
+        "cwd": "libs/prisma-client/src/lib"
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
     }
   },
   "tags": []
