@@ -5,7 +5,7 @@
   "projectType": "library",
   "targets": {
     "seed": {
-      "command": "ts-node ./seed.ts",
+      "command": "ts-node ./src/lib/seed.ts",
       "options": {
         "cwd": "libs/prisma-client/src/lib"
       }
