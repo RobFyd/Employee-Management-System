@@ -12,9 +12,9 @@ services:
       POSTGRES_DB: mewa-workshop
     volumes:
       - ./volumes/postgres:/var/lib/postgresql/data
-  # redis:
-  #   image: redis
-  #   container_name: mewa-redis
-  #   ports:
-  #     - 6379:6379
-  #   restart: always
+  redis:
+    image: redis
+    container_name: mewa-redis
+    ports:
+      - 6379:6379
+    restart: always
