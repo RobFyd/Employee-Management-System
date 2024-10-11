@@ -2,7 +2,11 @@
   "name": "@ems/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "generate:types": "nx run prisma-schema:generate-types",
+    "postinstall": "npm run generate:types",
+    "build": "npm run generate:types && nx run website:build:production"
+  },
   "private": true,
   "engines": {
     "node": "20.x"
