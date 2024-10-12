@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { fetchReview } from "../services";
+import { fetchReview, fetchReview2 } from "../services";
 
 type Props = {
     params: {
@@ -23,3 +23,21 @@ export default async function ReviewPage({ params }: Props) {
         </div>
     )
 }
+
+// review for server
+
+// export async function ReviewPage2({ params }: Props) {
+//     const publicId = params.publicId;
+//     const review = await fetchReview2(publicId);
+
+//     if (!review) {
+//         notFound();
+//     }
+
+//     return (
+//         <div>
+//             <h1>{review.content}</h1>
+//             <p>{review.author}</p>
+//         </div>
+//     )
+// }
