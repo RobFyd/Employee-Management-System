@@ -1,6 +1,8 @@
 import { format } from 'date-fns';
 import { CreateReviewDto } from './types';
 
+import db from '@ems/prisma-client';
+
 type Review = {
   id: string;
   content: string;
@@ -23,8 +25,9 @@ type AirtableReviewResponseDto = {
   records: AirTableReview[];
 };
 
+//airtable
 export const fetchReviews = async () => {
-  // noStore();
+  //noStore();
   const response = await fetch(
     `${process.env.AIRTABLE_BASE_URL}/reviews?view=default&sort%5B0%5D%5Bfield%5D=created_at&sort%5B0%5D%5Bdirection%5D=desc`,
     {
@@ -42,6 +45,20 @@ export const fetchReviews = async () => {
       author: elem.fields.author,
       created_at: format(elem.fields.created_at, 'dd.MM.yyyy HH:mm:ss'),
     });
+  });
+
+  return reviews;
+};
+
+//server
+export const fetchReviews2 = async () => {
+  const reviews = await db.user.findMany({
+    select: {
+      public_id: true,
+      author: true,
+      content: true,
+      created_at: true,
+    },
   });
 
   return reviews;
