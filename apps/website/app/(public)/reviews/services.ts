@@ -59,6 +59,9 @@ export const fetchReviews2 = async () => {
       content: true,
       created_at: true,
     },
+    orderBy: {
+      created_at: 'desc',
+    },
   });
 
   return reviews;
@@ -104,4 +107,20 @@ export const fetchReview = async (publicId: string) => {
   const data: AirTableReview = await response.json();
 
   return data;
+};
+
+export const fetchReview2 = async (publicId: string) => {
+  const review = await db.user.findUnique({
+    where: {
+      public_id: publicId,
+    },
+    select: {
+      public_id: true,
+      author: true,
+      content: true,
+      created_at: true,
+    },
+  });
+
+  return review;
 };
