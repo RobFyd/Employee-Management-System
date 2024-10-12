@@ -11,7 +11,7 @@ import clsx from "clsx";
 //   red: "#ff0000",
 // };
 
-import { MouseEventHandler } from "react";
+// import { MouseEventHandler } from "react";
 
 const colors = {
   turquise: "#1abc9c",
@@ -47,20 +47,20 @@ type Props = {
   // className?: string;
 };
 
-const UserForm = () => {
+// const UserForm = () => {
 
-  // const handleSubmit: FormEventHandler = (e) => {}; // for forms
-  // const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {}; // for input fields
-  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-    console.log("Form submitted");
-  };
+//   // const handleSubmit: FormEventHandler = (e) => {}; // for forms
+//   // const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {}; // for input fields
+//   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
+//     console.log("Form submitted");
+//   };
 
-  return (
-    <div>
-      <Button label="Submit" onClick={handleClick} />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <Button label="Submit" onClick={handleClick} />
+//     </div>
+//   );
+// }
 
 export const Button = ({
   label,
@@ -77,7 +77,7 @@ export const Button = ({
     "px-4 py-1", // padding
     "text-sm text-white", // text size and color
     "bg-blue-600", // background color
-    "font-semibold", // font weight
+    //"font-semibold", // font weight
     "rounded-full border border-blue-200", // border
     "hover:text-white hover:bg-blue-500 hover:border-transparent", // hover effects
     className, // custom classes
