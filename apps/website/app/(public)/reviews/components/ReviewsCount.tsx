@@ -5,7 +5,7 @@ export default async function ReviewsCount() {
 
     return (
         <div>
-            <h3 className="mb-4 font-bold flex justify-center">Count: {reviewsCount}</h3>
+            <h3 className="mb-4 font-bold flex justify-center">Count in Airtable: {reviewsCount}</h3>
         </div>
     );
 }
