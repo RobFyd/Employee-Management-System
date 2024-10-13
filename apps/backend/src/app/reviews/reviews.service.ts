@@ -3,12 +3,12 @@ import { Injectable } from '@nestjs/common';
 type Review = {
   id: number;
   content: string;
-  rating: number;
+  rate: number;
 };
 
 const reviews: Review[] = [
-  { id: 1, content: 'Review 1', rating: 5 },
-  { id: 2, content: 'Review 2', rating: 4 },
+  { id: 1, content: 'Review 1', rate: 5 },
+  { id: 2, content: 'Review 2', rate: 4 },
 ];
 
 @Injectable()
