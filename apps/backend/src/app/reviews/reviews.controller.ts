@@ -1,11 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ReviewsService } from './reviews.service';
 
-type ReviewDto = {
-  id: number;
-  content: string;
-  rating: number;
-};
+type ReviewDto = { id: number; content: string; rate: number };
 
 @Controller('reviews') // http://localhost:3000/api/reviews
 export class ReviewsController {
@@ -23,7 +19,7 @@ export class ReviewsController {
 
   @Delete(':id')
   deleteReview(@Param(':id') id: number) {
-    return this.reviewsService.getReview(id);
+    return this.reviewsService.deleteReview(id);
   }
 
   @Post()
