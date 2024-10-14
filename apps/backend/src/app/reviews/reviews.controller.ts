@@ -18,8 +18,9 @@ export class ReviewsController {
   }
 
   @Delete(':id')
-  deleteReview(@Param(':id') id: number) {
-    return this.reviewsService.deleteReview(id);
+  async deleteReview(@Param(':id') id: number) {
+    await this.reviewsService.deleteReview(id);
+    return {};
   }
 
   @Post()
