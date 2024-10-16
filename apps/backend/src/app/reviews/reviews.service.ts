@@ -1,4 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 
 type Review = {
   id: number;
@@ -20,7 +25,9 @@ export class ReviewsService {
   getReview(id: string): Review {
     const review: Review = reviews.find((item) => item.id === +id);
     if (!review) {
-      throw new Error('Review not found');
+      // throw new Error('Review not found');
+      // throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
+      throw new NotFoundException('Review not found');
     }
     return review;
   }
