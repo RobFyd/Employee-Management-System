@@ -23,12 +23,12 @@ export class ReviewsController {
   }
 
   @Get(':id')
-  getReview(@Param(':id') id: number) {
+  getReview(@Param('id') id: string) {
     return this.reviewsService.getReview(id);
   }
 
   @Delete(':id')
-  async deleteReview(@Param(':id') id: number) {
+  async deleteReview(@Param(':id') id: string) {
     await this.reviewsService.deleteReview(id);
     return {};
   }
