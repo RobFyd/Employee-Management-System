@@ -17,8 +17,12 @@ export class ReviewsService {
     return reviews;
   }
 
-  getReview(id: Review['id']): Review {
-    return reviews[0];
+  getReview(id: string): Review {
+    const review: Review = reviews.find((item) => item.id === +id);
+    if (!review) {
+      throw new Error('Review not found');
+    }
+    return review;
   }
 
   createReview(data: Review) {
@@ -26,7 +30,7 @@ export class ReviewsService {
     return data;
   }
 
-  deleteReview(id: Review['id']) {
+  deleteReview(id: string) {
     return null;
   }
 }
