@@ -4,12 +4,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-
-type Review = {
-  id: number;
-  content: string;
-  rate: number;
-};
+import { Review } from './entities/review.entity';
 
 const reviews: Review[] = [
   { id: 1, content: 'Review 1', rate: 5 },
