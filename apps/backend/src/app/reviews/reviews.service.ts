@@ -5,6 +5,8 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { Review } from './entities/review.entity';
+import { CreateReviewDto } from './dtos/create-review.dto';
+import { UpdateReviewDto } from './dtos/update-review.dto';
 
 const reviews: Review[] = [
   { id: 1, content: 'Review 1', rate: 5 },
@@ -27,9 +29,13 @@ export class ReviewsService {
     return review;
   }
 
-  createReview(data: Review) {
-    reviews.push(data);
-    return data;
+  createReview(createReviewDto: CreateReviewDto) {
+    // reviews.push(CreateReviewDto);
+    return createReviewDto;
+  }
+
+  updateReview(id: string, updateReviewDto: UpdateReviewDto) {
+    return updateReviewDto;
   }
 
   deleteReview(id: string) {
