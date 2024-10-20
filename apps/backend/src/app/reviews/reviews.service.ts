@@ -28,7 +28,7 @@ export class ReviewsService {
   }
 
   async getReview(id: User['id']): Promise<User> {
-    const review: User = await this.prisma.user.findFirst({
+    const review: User = await this.prisma.user.findFirstOrThrow({
       where: { id },
     });
     if (!review) {
