@@ -58,7 +58,7 @@
     "@nx/vite": "17.2.6",
     "@nx/webpack": "17.2.6",
     "@nx/workspace": "17.2.6",
-    "@prisma/client": "^5.20.0",
+    "@prisma/client": "^5.21.1",
     "@storybook/addon-a11y": "7.6.6",
     "@storybook/addon-essentials": "7.6.6",
     "@storybook/addon-interactions": "7.6.6",
