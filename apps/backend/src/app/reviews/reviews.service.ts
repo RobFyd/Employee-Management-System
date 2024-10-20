@@ -4,28 +4,33 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { Review } from './entities/review.entity';
+
+import { type User } from '@prisma/client';
+
+// import { Review } from './entities/review.entity';
 import { CreateReviewDto } from './dtos/create-review.dto';
 import { UpdateReviewDto } from './dtos/update-review.dto';
 import { PrismaService } from '../prisma.service';
 
-const reviews: Review[] = [
-  { id: 1, content: 'Review 1', rate: 5 },
-  { id: 2, content: 'Review 2', rate: 4 },
-];
+// const reviews: Review[] = [
+//   { id: 1, content: 'Review 1', rate: 5 },
+//   { id: 2, content: 'Review 2', rate: 4 },
+// ];
 
 @Injectable()
 export class ReviewsService {
   constructor(private prisma: PrismaService) {}
 
-  getReviews(page?: number, offset?: number): Review[] {
-    console.log(this.prisma.user.findMany());
-
-    return reviews;
+  async getReviews(page?: number, offset?: number): Promise<User[]> {
+    //console.log(await this.prisma.user.findMany());
+    //return reviews;
+    return await this.prisma.user.findMany();
   }
 
-  getReview(id: Review['id']): Review {
-    const review: Review = reviews.find((item) => item.id === id);
+  async getReview(id: User['id']): Promise<User> {
+    const review: User = await this.prisma.user.findFirst({
+      where: { id },
+    });
     if (!review) {
       // throw new Error('Review not found');
       // throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
@@ -40,11 +45,11 @@ export class ReviewsService {
     return createReviewDto;
   }
 
-  updateReview(id: Review['id'], updateReviewDto: UpdateReviewDto) {
+  updateReview(id: User['id'], updateReviewDto: UpdateReviewDto) {
     return updateReviewDto;
   }
 
-  deleteReview(id: Review['id']) {
+  deleteReview(id: User['id']) {
     return null;
   }
 }
