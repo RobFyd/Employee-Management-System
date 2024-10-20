@@ -7,6 +7,7 @@ import {
 import { Review } from './entities/review.entity';
 import { CreateReviewDto } from './dtos/create-review.dto';
 import { UpdateReviewDto } from './dtos/update-review.dto';
+import { PrismaService } from '../prisma.service';
 
 const reviews: Review[] = [
   { id: 1, content: 'Review 1', rate: 5 },
@@ -15,7 +16,11 @@ const reviews: Review[] = [
 
 @Injectable()
 export class ReviewsService {
+  constructor(private prisma: PrismaService) {}
+
   getReviews(page?: number, offset?: number): Review[] {
+    console.log(this.prisma.user.findMany());
+
     return reviews;
   }
 
