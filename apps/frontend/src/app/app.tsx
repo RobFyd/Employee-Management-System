@@ -8,6 +8,7 @@ import { RegistrationPage } from "./pages/RegistrationPage";
 import { ROUTE } from "./routes";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { useState } from "react";
+import { CreateOfferPage } from "./pages/CreateOfferPage";
 
 export function App() {
   const [user, setUser] = useState(true);
@@ -35,11 +36,11 @@ export function App() {
         },
         {
           path: ROUTE.EMPLOYEES,
-          element:
-            // <ProtectedRoute user={user}>
-            //   <EmployeesPage />
-            // </ProtectedRoute>,
-            <ProtectedRoute user={user} element={<EmployeesPage />} />,
+          element: <ProtectedRoute user={user} element={<EmployeesPage />} />,
+        },
+        {
+          path: ROUTE.OFFERS_CREATE,
+          element: <CreateOfferPage />,
         },
       ],
     },
