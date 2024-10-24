@@ -1,6 +1,6 @@
 import { IsNumber, IsString, IsPositive } from 'class-validator';
 
-export class CreateReviewDto {
+export class CreateOfferDto {
   @IsString()
   role: string;
 
