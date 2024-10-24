@@ -7,24 +7,19 @@ import {
 
 import { type User } from '@prisma/client';
 
-import { CreateReviewDto } from './dtos/create-review.dto';
-import { UpdateReviewDto } from './dtos/update-review.dto';
+import { CreateOfferDto } from './dtos/create-offer.dto';
+import { UpdateOfferDto } from './dtos/update-offer.dto';
 import { PrismaService } from '../prisma.service';
 
-// const reviews: Review[] = [
-//   { id: 1, content: 'Review 1', rate: 5 },
-//   { id: 2, content: 'Review 2', rate: 4 },
-// ];
-
 @Injectable()
-export class ReviewsService {
+export class OffersService {
   constructor(private prisma: PrismaService) {}
 
-  async getReviews(page?: number, offset?: number): Promise<User[]> {
+  async getOffers(page?: number, offset?: number): Promise<User[]> {
     return await this.prisma.user.findMany();
   }
 
-  async getReview(id: User['id']): Promise<User> {
+  async getOffer(id: User['id']): Promise<User> {
     const review: User = await this.prisma.user.findFirst({
       where: { id },
     });
@@ -34,15 +29,11 @@ export class ReviewsService {
     return review;
   }
 
-  createReview(createReviewDto: CreateReviewDto) {
-    return createReviewDto;
+  createOffer(createOfferDto: CreateOfferDto) {
+    return createOfferDto;
   }
 
-  updateReview(id: User['id'], updateReviewDto: UpdateReviewDto) {
-    return updateReviewDto;
-  }
-
-  deleteReview(id: User['id']) {
-    return null;
+  updateOffer(id: User['id'], updateOfferDto: UpdateOfferDto) {
+    return updateOfferDto;
   }
 }
