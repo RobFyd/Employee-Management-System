@@ -8,7 +8,7 @@ import {
   Query,
   Patch,
 } from '@nestjs/common';
-import { ReviewsService } from './reviews.service';
+import { ReviewsService } from './offers.service';
 import { CreateReviewDto } from './dtos/create-review.dto';
 import { UpdateReviewDto } from './dtos/update-review.dto';
 
