@@ -8,43 +8,32 @@ import {
   Query,
   Patch,
 } from '@nestjs/common';
-import { ReviewsService } from './offers.service';
-import { CreateReviewDto } from './dtos/create-review.dto';
+import { OffersService } from './offers.service';
+import { CreateOfferDto } from './dtos/create-review.dto';
 import { UpdateReviewDto } from './dtos/update-review.dto';
 
-@Controller('reviews') // http://localhost:3000/api/reviews
-export class ReviewsController {
-  constructor(private readonly reviewsService: ReviewsService) {}
+@Controller('offers') // http://localhost:3000/api/offers
+export class OffersController {
+  constructor(private readonly offersService: OffersService) {}
 
   @Get()
-  async getReviews(@Query() query) {
+  async getOffers(@Query() query) {
     const { page, offset } = query;
-    return await this.reviewsService.getReviews(page, offset);
-    // return this.reviewsService.getReviews();
+    return await this.offersService.getOffers(page, offset);
   }
 
   @Get(':id')
-  async getReview(@Param('id') id: number) {
-    return await this.reviewsService.getReview(id);
-  }
-
-  @Delete(':id')
-  async deleteReview(@Param(':id') id: number) {
-    await this.reviewsService.deleteReview(id);
-    return {};
+  async getOffer(@Param('id') id: number) {
+    return await this.offersService.getOffer(id);
   }
 
   @Post()
-  createReview(@Body() createReviewDto: CreateReviewDto) {
-    console.log(createReviewDto instanceof CreateReviewDto);
-    return this.reviewsService.createReview(createReviewDto);
+  createOffer(@Body() createOfferDto: CreateOfferDto) {
+    return this.offersService.createOffer(createOfferDto);
   }
 
   @Patch(':id')
-  updateReview(
-    @Param('id') id: number,
-    @Body() updateReviewDto: UpdateReviewDto
-  ) {
-    return this.reviewsService.updateReview(id, updateReviewDto);
+  updateOffer(@Param('id') id: number, @Body() updateOfferDto: UpdateOfferDto) {
+    return this.offersService.updateOffer(id, updateOfferDto);
   }
 }
