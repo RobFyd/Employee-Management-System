@@ -1,12 +1,13 @@
 import { IsNumber, IsString, IsPositive } from 'class-validator';
 
 export class CreateReviewDto {
-  //   id: number;
+  @IsString()
+  role: string;
 
   @IsString()
-  content: string;
+  description: string;
 
   @IsNumber()
   @IsPositive()
-  rate: number;
+  salary: number;
 }
