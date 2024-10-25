@@ -1,12 +1,12 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { createOfferSchema, CreateReviewDto } from './types'
+import { createOfferSchema, CreateOfferDto } from './types'
 
 import { Button, Input } from "@ems/common-ui";
 
 type Props = {
-    createOffer: (data: CreateReviewDto) => void;
+    createOffer: (data: CreateOfferDto) => void;
 };
 
 export const CreateOffer = ({ createOffer }: Props) => {
@@ -14,12 +14,13 @@ export const CreateOffer = ({ createOffer }: Props) => {
         register,
         handleSubmit,
         formState: { errors, isSubmitting, isValid },
-    } = useForm<CreateReviewDto>({
+    } = useForm<CreateOfferDto>({
         resolver: zodResolver(createOfferSchema),
     });
 
-    const submitHandler: SubmitHandler<CreateReviewDto> = async (data) => {
+    const submitHandler: SubmitHandler<CreateOfferDto> = async (data) => {
         console.log({ data });
+        createOffer(data);
     };
 
     return (
