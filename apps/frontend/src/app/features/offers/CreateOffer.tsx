@@ -5,7 +5,11 @@ import { createOfferSchema, CreateReviewDto } from './types'
 
 import { Button, Input } from "@ems/common-ui";
 
-export const CreateOffer = () => {
+type Props = {
+    createOffer: (data: CreateReviewDto) => void;
+};
+
+export const CreateOffer = ({ createOffer }: Props) => {
     const {
         register,
         handleSubmit,
