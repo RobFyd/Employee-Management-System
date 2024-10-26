@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-// import { type Review } from '@prisma/client';
+// import { type User } from '@prisma/client';
 import db from '@ems/prisma-client';
 import { createReviewInAirtable } from '../services';
 import { CreateReviewDto, createReviewSchema } from '../types';
