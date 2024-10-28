@@ -13,7 +13,7 @@ export const CreateOffer = ({ createOffer }: Props) => {
     const {
         register,
         handleSubmit,
-        formState: { errors, isSubmitting, isValid },
+        formState: { errors, isSubmitting },   //isValid - is form valid
     } = useForm<CreateOfferDto>({
         resolver: zodResolver(createOfferSchema),
     });
