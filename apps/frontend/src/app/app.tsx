@@ -9,6 +9,7 @@ import { ROUTE } from "./routes";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { useState } from "react";
 import { CreateOfferPage } from "./pages/CreateOfferPage";
+import { OffersPage } from "./pages/OffersPage";
 
 export function App() {
   const [user, setUser] = useState(true);
@@ -37,6 +38,10 @@ export function App() {
         {
           path: ROUTE.EMPLOYEES,
           element: <ProtectedRoute user={user} element={<EmployeesPage />} />,
+        },
+        {
+          path: ROUTE.OFFERS,
+          element: <OffersPage />,
         },
         {
           path: ROUTE.OFFERS_CREATE,
