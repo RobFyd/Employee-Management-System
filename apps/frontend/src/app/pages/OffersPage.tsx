@@ -1,19 +1,25 @@
+import { useState, useEffect } from 'react';
 import { Header } from '@ems/common-ui'
+import { OfferListDto } from '@ems/contracts';
+
 import { OffersList } from '../features/offers/OffersList';
 import { fetchOffers } from '../features/offers/offers.services';
-import { useApi } from '../hooks/useApi';
-import { useState } from 'react';
-
-
 
 export const CreateOfferPage = () => {
-    //const { } = useApi();
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<OfferListDto[]>([]);
+    useEffect(() => {
+
+        const loadData = async () => {
+            const response = await fetchOffers();
+            setData(response.data);
+        };
+        loadData();
+    }, []);
 
     return (
         <div>
             <Header>Offers</Header>
-            <OffersList data={ } />
+            <OffersList data={data} />
         </div>
     )
 };
