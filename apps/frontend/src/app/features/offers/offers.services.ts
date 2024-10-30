@@ -1,3 +1,5 @@
+import { type AxiosResponse } from 'axios';
+
 import { OfferListDto } from '@ems/contracts';
 
 import { api } from '../../config/api';
@@ -7,6 +9,6 @@ export const createOffer = (data: CreateOfferDto) => {
   return api.post('/offers', data);
 };
 
-export const fetchOffers = (): Promise<OfferListDto[]> => {
+export const fetchOffers = (): Promise<AxiosResponse<OfferListDto[]>> => {
   return api.get('/offers');
 };
