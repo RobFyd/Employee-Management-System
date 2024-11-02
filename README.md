@@ -38,6 +38,7 @@ We will verify our skills writing Employee Management System (EMS). This system 
 - Chromatic
 - Mock Service Worker
 - React Testing Library
+- OpenAI API
 
 
 Enjoy 💪
