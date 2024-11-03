@@ -7,4 +7,4 @@ import { AIService } from './ai.service';
   controllers: [AIController],
   providers: [AIService],
 })
-export class AiModule {}
+export class AIModule {}
