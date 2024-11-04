@@ -15,6 +15,14 @@ export class AIService {
           content: 'You are a helpful programmer please give IT advices.',
         },
         { role: 'user', content: completions.message },
+        // {
+        //   role: 'assistant',
+        //   content: 'I am a helpful programmer, I will give you IT advices.',
+        // },
+        // {
+        //   role: 'user',
+        //   content: 'I am having trouble with my computer, can you help me?',
+        // },
       ],
     });
 
