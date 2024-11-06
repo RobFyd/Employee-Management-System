@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
 import { CompletionsDto } from './dtos/completions.dto';
+import { AssistantDto } from './dtos/assistant.dto';
 
 @Injectable()
 export class AIService {
@@ -35,5 +36,13 @@ export class AIService {
         response: completion,
       },
     };
+  }
+
+  async askAssistant(assistantDto: AssistantDto) {
+    const assistant = await this.openai.beta.assistants.retrieve(
+      process.env.OPENAI_ASSISTANT_ID
+    );
+
+    console.log(assistant);
   }
 }
