@@ -43,6 +43,18 @@ export class AIService {
       process.env.OPENAI_ASSISTANT_ID
     );
 
+    const thread = await this.openai.beta.threads.create();
+
+    const messages = await this.openai.beta.threads.messages.create(thread.id, {
+      role: 'user',
+      content: assistantDto.message,
+    });
+
+    const run = await this.openai.beta.threads.runs.create(thread.id, {
+      assistant_id: 'asst_abc123',
+    });
+
     console.log(assistant);
+    return assistant;
   }
 }
