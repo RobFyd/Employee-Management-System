@@ -59,6 +59,13 @@ export class AIService {
     const runId = run.id;
 
     run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
+    //queued, in_progress, cancelling
+    if (run.status === 'completed') {
+      const outputMessage = await this.openai.beta.threads.messages.list(
+        threadId
+      );
+    }
+
     return {
       assistant,
       thread,
