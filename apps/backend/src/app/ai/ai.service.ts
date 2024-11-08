@@ -52,10 +52,13 @@ export class AIService {
       content: assistantDto.message,
     });
 
-    const run = await this.openai.beta.threads.runs.create(threadId, {
+    let run = await this.openai.beta.threads.runs.create(threadId, {
       assistant_id: assistantId,
     });
 
+    const runId = run.id;
+
+    run = await this.openai.beta.threads.runs.retrieve(threadId, runId);
     return {
       assistant,
       thread,
